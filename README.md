@@ -9,13 +9,13 @@ Obsidian Floccus Bookmarks is a plugin for [Obsidian](https://obsidian.md/) that
 
 ## Usage
 
-1. Configure the plugin settings in the Obsidian settings menu under "Obsidian Floccus Bookmark Settings".
+1. Configure the plugin settings in the Obsidian settings menu under "Floccus Bookmarks To Markdown Settings".
 2. In the left ribbon of Obsidian, click on the bookmark icon to import and convert the bookmarks from the XBEL file.
 3. The generated Markdown file will be created in the specified folder path with the specified filename.
 
 ## Plugin Settings
 
-The plugin settings can be accessed in the Obsidian settings menu under "Obsidian Floccus Bookmark Settings". The following settings are available:
+The plugin settings can be accessed in the Obsidian settings menu under "Floccus Bookmarks To Markdown Settings". The following settings are available:
 
 - **XBEL Absolute Folder Path**: The absolute folder path of the XBEL file.
 - **XBEL Filename**: The filename of the XBEL file.

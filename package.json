@@ -1,5 +1,5 @@
 {
-	"name": "obsidian-floccus-bookmarks",
+	"name": "floccus-bookmarks-to-markdown",
 	"version": "0.2.0",
 	"description": "Bring your Bookmarks from Floccus to your Obsidian",
 	"main": "main.js",

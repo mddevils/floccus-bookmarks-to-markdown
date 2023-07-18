@@ -5,7 +5,7 @@ import { parseStringPromise } from 'xml2js';
 
 // Remember to rename these classes and interfaces!
 
-interface obfPluginSettings {
+interface fbmPluginSettings {
     xbelFolderPath: string;
     xbelFileName: string;
     mdFolderPath: string;
@@ -16,7 +16,7 @@ interface obfPluginSettings {
     updateInterval: number;
 }
 
-const DEFAULT_SETTINGS: obfPluginSettings = {
+const DEFAULT_SETTINGS: fbmPluginSettings = {
     xbelFolderPath: '',
     xbelFileName: 'bookmarks.xbel',
     mdFolderPath: '',
@@ -27,8 +27,8 @@ const DEFAULT_SETTINGS: obfPluginSettings = {
     updateInterval: 900,
 }
 
-export default class ofbPlugin extends Plugin {
-    settings: obfPluginSettings;
+export default class fbmPlugin extends Plugin {
+    settings: fbmPluginSettings;
 
     async onload() {
         await this.loadSettings();
@@ -44,7 +44,7 @@ export default class ofbPlugin extends Plugin {
         bookmarkIconEl.addClass('my-plugin-ribbon-class');
 
         // This adds a settings tab so the user can configure various aspects of the plugin
-        this.addSettingTab(new FloccusBookmarksSettingTab(this.app, this));
+        this.addSettingTab(new FBMSettingTab(this.app, this));
 
         // Call the processXBELFileData function based on the automatic update setting
         if (this.settings.automaticUpdate) {
@@ -202,10 +202,10 @@ export default class ofbPlugin extends Plugin {
     
 }
 
-class FloccusBookmarksSettingTab extends PluginSettingTab {
-    plugin: ofbPlugin;
+class FBMSettingTab extends PluginSettingTab {
+    plugin: fbmPlugin;
 
-    constructor(app: App, plugin: ofbPlugin) {
+    constructor(app: App, plugin: fbmPlugin) {
         super(app, plugin);
         this.plugin = plugin;
     }
