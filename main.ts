@@ -34,10 +34,10 @@ export default class ofbPlugin extends Plugin {
         await this.loadSettings();
         
         // This creates an icon in the left ribbon.
-        const bookmarkIconEl = this.addRibbonIcon('bookmark', 'Obsidian Floccus Bookmarks', (evt: MouseEvent) => {
+        const bookmarkIconEl = this.addRibbonIcon('bookmark', 'Floccus Bookmarks to Markdown', (evt: MouseEvent) => {
             // Called when the user clicks the icon.
             this.processXBELFileData();
-            new Notice('Floccus Bookmarks MD Updated!');
+            new Notice('Floccus Bookmarks Markdown Updated!');
         });
 
         // Perform additional things with the ribbon
@@ -214,7 +214,7 @@ class FloccusBookmarksSettingTab extends PluginSettingTab {
         const { containerEl } = this;
 
         containerEl.empty();
-        containerEl.createEl('h2', { text: 'Obsidian Floccus Bookmarks Settings' });
+        containerEl.createEl('h2', { text: 'Floccus Bookmarks to Markdown Settings' });
 
         new Setting(containerEl)
         .setName('XBEL Absolute Folder Path')
@@ -241,7 +241,7 @@ class FloccusBookmarksSettingTab extends PluginSettingTab {
         );
 
         new Setting(containerEl)
-        .setName('MD Vault Folder Path')
+        .setName('Markdown Vault Folder Path')
         .setDesc('The vault folder for the generated Markdown file.')
         .addText((text) =>
             text
@@ -253,7 +253,7 @@ class FloccusBookmarksSettingTab extends PluginSettingTab {
         );
 
         new Setting(containerEl)
-        .setName('MD Filename')
+        .setName('Markdown File')
         .setDesc('The filename for the generated Markdown file.')
         .addText((text) =>
             text

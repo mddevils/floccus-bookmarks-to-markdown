@@ -1,4 +1,4 @@
-# Obsidian Floccus Bookmarks Plugin
+# Floccus Bookmarks To Markdown Plugin
 
 Obsidian Floccus Bookmarks is a plugin for [Obsidian](https://obsidian.md/) that allows you to import and convert bookmarks from an XBEL file into a Markdown file. This plugin is inspired by [Floccus](https://floccus.org/), a browser extension that synchronizes bookmarks across different browsers.
 

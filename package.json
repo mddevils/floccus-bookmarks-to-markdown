@@ -1,7 +1,7 @@
 {
-	"name": "obisidian-floccus-bookmarks",
+	"name": "obsidian-floccus-bookmarks",
 	"version": "0.2.0",
-	"description": "This is a sample plugin for Obsidian (https://obsidian.md)",
+	"description": "Bring your Bookmarks from Floccus to your Obsidian",
 	"main": "main.js",
 	"scripts": {
 		"dev": "node esbuild.config.mjs",
