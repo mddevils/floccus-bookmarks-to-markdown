@@ -1,0 +1,11 @@
+{
+	"id": "obisidian-floccus-bookmarks",
+	"name": "Obsidian Floccus Bokkmarks",
+	"version": "0.2.0",
+	"minAppVersion": "0.15.0",
+	"description": "Bring your Bookmarks from Floccus to your Obsidian",
+	"author": "mddevils",
+	"authorUrl": "https://github.com/mddevils/",
+	"fundingUrl": "https://ko-fi.com/mddevils",
+	"isDesktopOnly": true
+}
