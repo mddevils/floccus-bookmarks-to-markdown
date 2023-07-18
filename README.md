@@ -25,7 +25,3 @@ The plugin settings can be accessed in the Obsidian settings menu under "Obsidia
 - **Number of Backups to Keep**: The number of backup files to keep.
 - **Automatic Update Bookmarks**: Enable automatic updating of bookmarks.
 - **Update Interval (in seconds)**: Specify the interval for automatic updates. (Automatic Update Bookmarks must be enabled.)
-
-## Credits
-
-[Floccus Bookmarks Plugin](https://github.com/mddevils/floccus-bookmarks-plugin) is developed by mddevils.
