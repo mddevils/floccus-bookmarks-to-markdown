@@ -3,7 +3,6 @@ import { join, parse } from 'path';
 import { promises as fsPromises } from 'fs';
 import { parseStringPromise } from 'xml2js';
 
-// Remember to rename these classes and interfaces!
 
 interface fbmPluginSettings {
     xbelFolderPath: string;
