@@ -3,7 +3,6 @@ import { join, parse } from 'path';
 import { promises as fsPromises } from 'fs';
 import { parseStringPromise } from 'xml2js';
 
-
 interface fbmPluginSettings {
     xbelFolderPath: string;
     xbelFileName: string;
@@ -40,7 +39,7 @@ export default class fbmPlugin extends Plugin {
         });
 
         // Perform additional things with the ribbon
-        bookmarkIconEl.addClass('my-plugin-ribbon-class');
+        bookmarkIconEl.addClass('floccus-bookmarks-to-md-icon');
 
         // This adds a settings tab so the user can configure various aspects of the plugin
         this.addSettingTab(new FBMSettingTab(this.app, this));
@@ -85,12 +84,12 @@ export default class fbmPlugin extends Plugin {
         // Create the output folder if it doesn't exist
         const mdFolder = this.app.vault.getAbstractFileByPath(mdFolderPath) as TFolder;
         if (!mdFolder) {
-            this.app.vault.createFolder(mdFolderPath);
+            await this.app.vault.createFolder(mdFolderPath);
         }
 
         // Check if the output file already exists and backup if necessary
         if (mdFile) {
-            this.backupExistingFile(mdFile, backupFolderPath);
+            await this.backupExistingFile(mdFile, backupFolderPath);
         }
 
         // Delete old backups, keeping only the specified number of most recent ones
@@ -113,7 +112,7 @@ export default class fbmPlugin extends Plugin {
         }
     }
     
-    backupExistingFile(file: TFile, backupFolderPath: string): void {
+    async backupExistingFile(file: TFile, backupFolderPath: string): Promise<void> {
         // Generate a date-time suffix in the format 'yyyymmddHHMMSS' using the current timezone
         const now = new Date();
         const timeZoneOffset = now.getTimezoneOffset() * 60000; // Convert minutes to milliseconds
@@ -123,7 +122,7 @@ export default class fbmPlugin extends Plugin {
         // Create the backup folder if it doesn't exist
         const backupFolder = this.app.vault.getAbstractFileByPath(backupFolderPath) as TFolder;
         if (!backupFolder) {
-            this.app.vault.createFolder(backupFolderPath);
+            await this.app.vault.createFolder(backupFolderPath);
         }
 
         // Create a new file name with the date-time suffix
@@ -133,7 +132,7 @@ export default class fbmPlugin extends Plugin {
         const backupFilePath = `${backupFolderPath}/${backupFileName}`;
         
         // Copy the existing file to the backup file
-        this.app.vault.rename(file, backupFilePath);
+        await this.app.vault.rename(file, backupFilePath);
         
     }
 
@@ -157,8 +156,8 @@ export default class fbmPlugin extends Plugin {
         const filesToDelete = backupFiles.length - keepCount+1;
         if (filesToDelete > 0) {
             const filesToDeleteList = backupFiles.slice(0, filesToDelete);
-            filesToDeleteList.forEach((file) => {
-                this.app.vault.trash(file, false);
+            filesToDeleteList.forEach(async (file) => {
+                await this.app.vault.trash(file, false);
             });
         }
     }
@@ -213,7 +212,6 @@ class FBMSettingTab extends PluginSettingTab {
         const { containerEl } = this;
 
         containerEl.empty();
-        containerEl.createEl('h2', { text: 'Floccus Bookmarks to Markdown Settings' });
 
         new Setting(containerEl)
         .setName('XBEL Absolute Folder Path')

@@ -1,7 +1,7 @@
 {
 	"id": "floccus-bookmarks-to-markdown",
 	"name": "Floccus Bookmarks to Markdown",
-	"version": "0.2.0",
+	"version": "0.2.1",
 	"minAppVersion": "0.15.0",
 	"description": "Bring your Bookmarks from Floccus to your Obsidian",
 	"author": "mddevils",
