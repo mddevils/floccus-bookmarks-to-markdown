@@ -214,8 +214,8 @@ class FBMSettingTab extends PluginSettingTab {
         containerEl.empty();
 
         new Setting(containerEl)
-        .setName('XBEL Absolute Folder Path')
-        .setDesc('The absolute folder path of the XBEL file.')
+        .setName('Xbel absolute folder path')
+        .setDesc('The absolute folder path of the xbel file.')
         .addText((text) =>
             text
             .setValue(this.plugin.settings.xbelFolderPath)
@@ -226,8 +226,8 @@ class FBMSettingTab extends PluginSettingTab {
         );
 
         new Setting(containerEl)
-        .setName('XBEL Filename')
-        .setDesc('The filename of the XBEL file.')
+        .setName('Xbel filename')
+        .setDesc('The filename of the xbel file.')
         .addText((text) =>
             text
             .setValue(this.plugin.settings.xbelFileName)
@@ -238,8 +238,8 @@ class FBMSettingTab extends PluginSettingTab {
         );
 
         new Setting(containerEl)
-        .setName('Markdown Vault Folder Path')
-        .setDesc('The vault folder for the generated Markdown file.')
+        .setName('Markdown vault folder path')
+        .setDesc('The vault folder for the generated markdown file.')
         .addText((text) =>
             text
             .setValue(this.plugin.settings.mdFolderPath)
@@ -250,8 +250,8 @@ class FBMSettingTab extends PluginSettingTab {
         );
 
         new Setting(containerEl)
-        .setName('Markdown File')
-        .setDesc('The filename for the generated Markdown file.')
+        .setName('Markdown file')
+        .setDesc('The filename for the generated markdown file.')
         .addText((text) =>
             text
             .setValue(this.plugin.settings.mdFileName)
@@ -262,7 +262,7 @@ class FBMSettingTab extends PluginSettingTab {
         );
 
         new Setting(containerEl)
-        .setName('Backup Folder Path')
+        .setName('Backup folder path')
         .setDesc('The vault folder for the backup files.')
         .addText((text) =>
             text
@@ -274,7 +274,7 @@ class FBMSettingTab extends PluginSettingTab {
         );
 
         new Setting(containerEl)
-        .setName('Number of Backups to Keep')
+        .setName('Number of backups to keep')
         .setDesc('The number of backup files to keep.')
         .addText((text) =>
             text
@@ -289,7 +289,7 @@ class FBMSettingTab extends PluginSettingTab {
         );
 
         new Setting(containerEl)
-        .setName('Automatic Update Bookmarks')
+        .setName('Automatic update bookmarks')
         .setDesc('Enable automatic updating of bookmarks.')
         .addToggle((toggle) =>
             toggle
@@ -301,8 +301,8 @@ class FBMSettingTab extends PluginSettingTab {
         );
 
         new Setting(containerEl)
-        .setName('Update Interval (in seconds)')
-        .setDesc('Specify the interval for automatic updates. Automatic Update Bookmarks must be on.')
+        .setName('Update interval (in seconds)')
+        .setDesc('Specify the interval for automatic updates. Automatic update bookmarks must be on.')
         .addText((text) =>
             text
             .setValue(String(this.plugin.settings.updateInterval))
